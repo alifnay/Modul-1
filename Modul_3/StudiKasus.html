@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studi Kasus Minggu 3</title>
+</head>
+
+<body>
+    <!--Membuat judul pada form-->
+    <h3>Studi Kasus : Validasi Input HTML5</h3>
+    <form action="" method="post">
+        <table border="0">
+            <!--Membuat form nama -->
+            <tr>
+                <td>Nama</td>
+                <!--Input nama ber type text dengan size 30, pattern digunakan agar input nama hanya bisa diisi huruf dan spasi-->
+                <td>:<input type="text" name="nama" size="30" placeholder="Isikan Nama Anda" pattern="[A-Za-z ]+" required></td>
+            </tr>
+
+            <!--Membuat form usia-->
+            <tr>
+                <td>Usia</td>
+                <!--Form usia ber type number dengan size 1, minimal input number 17 dengan maksimal input 30-->
+                <td>:<input type="number" name="usia" size="1" min="17" max="30" required>(Usia min 17-30)</td>
+            </tr>
+
+            <!--Membuat form email-->
+            <tr>
+                <td>Email</td>
+                <!--Form email ber type email dengan size 30-->
+                <td>:<input type="email" name="email" size="30" placeholder="nama_email@host.com" required></td>
+            </tr>
+
+            <!--Membuat form web-->
+            <tr>
+                <td>Web</td>
+                <!--Form web ber type text dengan size 30-->
+                <td>:<input type="text" name="web" size="30" placeholder="http://" required></td>
+            </tr>
+
+            <!--Membuat form password-->
+            <tr>
+                <td>Password</td>
+                <!--Form password ber type password dengan minimal length 8-->
+                <td>:<input type="password" name="password" size="30" minlength="8" placeholder="Semua minimal 8" required></td>
+            </tr>
+
+            <!--Tombol submit-->
+            <tr>
+                <td></td>
+                <td>&nbsp;<input type="submit" value="Submit" id=""></td>
+            </tr>
+
+        </table>
+    </form>
+
+</body>
+</html>
