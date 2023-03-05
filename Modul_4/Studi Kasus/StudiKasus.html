@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studi Kasus Modul 4</title>
+
+    <!--Membuat atribut style untuk css-->
+    <style>
+
+        /*membuat border lingkaran*/
+        .style1{
+            width: 200px; /*membuat lebar 200 px dan tinggi 200px*/
+            height: 200px;
+            border: 2px solid blue; /*border 1px solid bewarna biru*/
+            background-color: aqua; /*warna background*/
+            border-radius: 100%; /*membuat radius sebesar 100% agar membentuk lingkaran*/
+            padding: 10px; /*padding sebesar 10px*/
+            font-style: italic; /*membuat font agar italic, display flex, dan memposisikan paragraf agar berada di tengah border*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /*membuat border melengkung di salah satu pojok atas dan bawah*/
+        .style2{
+            width: 300px; /*border lebar 300px dan tinggi 50px*/
+            height: 50px;
+            border: 2px solid green; /*warna pada border*/
+            background-color: yellow; /*warna background*/
+            border-top-right-radius: 20px; /*membuat radius pojok kanan atas dan kiri bawah border menjadi 20px*/
+            border-bottom-left-radius: 20px;
+            display: flex; /*memposisikan content di tengah border*/
+            justify-content: center;
+            align-items: center;
+        }
+
+        /*Membuat box shadow*/
+        .style3{
+            width: 300px; /*border dengan lebar 300px dan tinggi 50px*/
+            height: 50px;
+            border: 1px solid black; /*warna pada border*/
+            background-color: silver; /*warna background*/
+            display: flex; /*memposisikan paragraf ditengah*/
+            justify-content: center;
+            align-items: center;
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.7); /*membuat box shadow 3px dengan alpha 0.7*/
+        }
+    </style>
+</head>
+
+<body>
+    <!--paragraf dengan style 1-->
+    <div class="style1" align="center">
+        Membuat paragraf dengan border lingkaran
+    </div>
+
+    <!--paragraf dengan style 2-->
+    <hr>
+    <div class="style2">
+        Membuat paragraf seperti pada style ke 2
+    </div>
+
+    <!--paragraf dengan style 3-->
+    <hr>
+    <div class="style3">
+        Membuat paragraf seperti pada style ke 3
+    </div>
+</body>
+</html>
