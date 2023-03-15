@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animasi Transisi CSS3</title>
+
+    <!--atribut style-->
+    <style>
+        /*kondisi box awal*/
+        .box {
+            width: 40%;
+            height: 100px;
+            background: aqua;
+            border: 2px solid blue;
+
+            /*animasi lebar box*/
+            -webkit-transition: width ls ease-in-out;
+            -o-transition: width ls ease-in-out;
+            -moz-transition: width ls ease-in-out;
+            transition: width ls ease-in-out;
+        }
+
+        /*jika landscape, melebar 100%*/
+        @media (orientation:landscape){
+            .box {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <h3>Transisi CSS3</h3>
+
+    <div class="box"></div>
+
+    <p>
+        Mencoba membuat animasi transisi. Ubah orientasi ke landscape/potrait dan sebaliknya
+        untuk melihat efek transisi
+    </p>
+</body>
+</html>
