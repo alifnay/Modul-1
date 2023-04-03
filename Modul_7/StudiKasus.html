@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page Tokopedia</title>
+
+    <!--Import Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!--Styling CSS-->
+    <style>
+        /*class css pada html*/
+        html{
+            box-sizing: border-box;
+            font-size: 14px;
+            font-family: 'Open Sauce One', sans-serif;
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%;
+        }
+        /*css pada body*/
+        body, html{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        /*css pada header*/
+        header{
+            text-align: center;
+            margin-top: 20px;
+            min-width: 960px;
+            display: block;
+        }
+        /*css button*/
+        button{
+            -webkit-appearance: button;
+            font-family: open system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            overflow: visible;
+        }
+        /*css isi*/
+        .isi{
+            position: relative;
+            margin-right: auto;
+            margin-left: auto;
+            min-width: 960px;
+        }
+        /*menggunakan media query pada isi*/
+        @media (min-width: 1200px){
+            .isi{
+                width: 1190px;
+            }
+        }
+        /*memberikan spasi*/
+        .space{
+            margin: 22px auto 0;
+            width: 700px;
+        }
+        /*css pada left wrapper*/
+        .left-wrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-right: 80px;
+        }
+        /*mengubah ukuran gambar*/
+        .gambarTokped{
+            width: 360px;
+            height: 303px;
+        }
+        /*css text center*/
+        .text-center{
+            font-size: 1.6em;
+            font-weight: 600;
+            color: #212121;
+            margin-top: 30px;
+            margin-bottom: 8px;
+        }
+        /*css deskripsi isi kiri*/
+        .desk-kiri{
+            margin-top: 5px;
+            font-size: 0.9rem;
+            line-height: 22px;
+            color: #6d7588;
+            text-align: center;
+            white-space: pre-line;
+        }
+        /*membuat box*/
+        .box{
+            border: 1px solid #f0f3f7;
+            border-radius: 3px !important;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+            padding: 24px 40px 32px;
+            width: 400px;
+            margin-left: 50px;
+        }
+        /*css title pada box*/
+        .box-title{
+            text-align: center;
+            margin: 0;
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: #40444e;
+        }
+        /*deskripsi pada box*/
+        .desk-box{
+            margin-top: 8px;
+            text-align: center;
+            color: #40444e;
+            font-size: 1rem;
+        }
+        /*css text login*/
+        .text-login{
+            color: #00aa5b;
+            text-decoration: none;
+        }
+        /*css login google*/
+        .login-google{
+            margin-top: 32px;
+            display: flex;
+        }
+        /*button*/
+        .login-google .btn-default{
+            width: 100%;
+        }
+        /*css button default*/
+        .btn-default{
+            background-color: var(--NN0,#FFFFFF);
+            border: 1px solid #bfc9d9;
+            border-radius: 8px;
+            color: #525867;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: 800;
+            font-size: 1rem;
+            height: 40px;
+            line-height: 20px;
+            outline: none;
+            position: relative;
+            padding: 0px 16px;
+            text-indent: initial;
+            transition: background-color 300ms ease 0s;
+            width: auto;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            justify-content: center;
+        }
+        /*css span pada button default*/
+        .btn-default span{
+            padding-left: 6px;
+            display: block;
+            font-size: inherit;
+            opacity: 1;
+            overflow: hidden;
+            position: relative;
+            text-overflow: ellipsis;
+            top: 0px;
+            transition: opacity 300ms linear 0s, top 300ms linear 0s;
+            white-space: nowrap;
+        }
+        /*css logo google*/
+        .logo-google{
+            left: 20px;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        /*css opsi*/
+        .opsi{
+            margin: 24px 0;
+            display: flex;
+            white-space: nowrap;
+            text-align: center;
+            color: #aab4c8;
+            font-size: 0.8rem;
+        }
+        /*css opsi before*/
+        .opsi:before{
+            content: '';
+            border-bottom: 1px solid rgba(0,0,0,0.12);
+            margin: auto 18px auto 0;
+            padding-right: 10px;
+            flex: 1 1;
+        }
+        /*css opsi after*/
+        .opsi:after{
+            content: '';
+            border-bottom: 1px solid rgba(0,0,0,0.12);
+            margin: auto 0 auto 18px;
+            padding-right: 10px;
+            flex: 1 1;
+        }
+        /*css form*/
+        form{
+            display: block;
+            margin-top: 0em;
+        }
+        /*memberikan spasi pada input*/
+        .space-input{
+            margin-bottom: 8px;
+            margin-top: 24px;
+        }
+        /*css regis pada space input*/
+        .space-input .regis{
+            font-weight: 400;
+            font-size: 0.8rem;
+            line-height: 1.3;
+            color: #40444e;
+            text-align: left;
+        }
+        /*regis*/
+        .regis{
+            display: inline-block;
+            pointer-events: none;
+            margin-bottom: 4px;
+        }
+        /*css input regis*/
+        .input-regis{
+            position: relative;
+        }
+        /*css register*/
+        .register{
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 280ms ease;
+            background-color: var(--color-page-background,#FFFFFF);
+            border: 1px solid var(--color-border,#E5E7E9);
+        }
+        /*padding pada button regis*/
+        .register .button-regis{
+            padding-right: 12px;
+            padding-left: 12px;
+        }
+        /*css button regis*/
+        .button-regis{
+            min-width: 0;
+            min-height: 0;
+            width: 100%;
+            color: var(--NN950,#212121);
+            font-family: inherit;
+            background-color: transparent;
+            line-height: 20px;
+            border: none;
+            outline: none;
+            height: auto;
+            font-size: 14px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+        /*css example*/
+        .example{
+            display: flex;
+            -webkit-box-align: baseline;
+            align-items: baseline;
+        }
+        /*css email*/
+        .email{
+            color: var(--color-text-low,rgba(49,53,59,0.68));
+            font-size: 12px;
+            line-height: 18px;
+            position: relative;
+            margin: 4px 0 0;
+        }
+        /*css class btn*/
+        .btn{
+            background-color: var(--GN500,#00aa5b);
+            border: none;
+            border-radius: 8px;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            display: block;
+            font-family: inherit;
+            font-weight: 800;
+            font-size: 1.1rem;
+            height: 48px;
+            line-height: 22px;
+            outline: none;
+            position: relative;
+            padding: 0 16px;
+            text-indent: initial;
+            transition: 300ms ease 0s;
+            width: 100%;
+            margin: 16px 0;
+        }
+        /*hover pada btn-daftar*/
+        .btn.btn-daftar:hover{
+            background-color: #008346;
+            color: #FFFFFF;
+        }
+        /*css span pada btn*/
+        .btn span{
+            display: block;
+            font-size: inherit;
+            opacity: 1;
+            overflow: hidden;
+            position: relative;
+            text-overflow: ellipsis;
+            top: 0px;
+            transition: opacity 300ms linear 0s,top 300ms linear 0s;
+            white-space: nowrap;
+        }
+        /*after pada btn*/
+        .btn:after{
+            background-color: rgb(82, 88, 103);
+            border-radius: inherit;
+            inset: 0px;
+            content: "";
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            transition: opacity 300ms ease 0s;
+        }
+        /*css pada keterangan*/
+        .keterangan{
+            margin-top: 15px;
+            color: #aab4c8;
+            font-size: 0.8rem;
+            text-align: center;
+            line-height: 18px;
+        }
+        /*css a pada keterangan*/
+        .keterangan a{
+            color: #00aa5b;
+        }
+        /*css footer tokped*/
+        .footer-tokped{
+            margin-top: 120px;
+            font-size: 0.9rem;
+            line-height: 22px;
+            color: var(--NN600,#6D7588);
+            padding: 15px 0 30px;
+            text-align: center;
+        }
+        /*media query pada spasi footer*/
+        @media (min-width: 1200px){
+            .space-footer{
+                width: 1190px;
+            }
+        }
+        /*spasi pada footer*/
+        .space-footer{
+            position: relative;
+            margin-right: auto;
+            margin-left: auto;
+            min-width: 960px;
+        }
+        /*css link pada footer*/
+        .footer-tokped .footer-link{
+            margin-left: 10px;
+            line-height: 1.2;
+            padding-left: 14px;
+            border-left: 1px solid #f0f3f7;
+        }
+        /*css a pada link footer*/
+        .footer-tokped .footer-link a{
+            color: #00aa5b;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<!--class body-->
+<body>
+    <!--header berisi logo tokopedia-->
+    <header class="logo">
+        <img src="	https://assets.tokopedia.net/assets-tokopedia-lite/v2/zeus/kratos/581fca3a.png" alt="/">
+    </header>
+
+    <!--isi konten-->
+    <br><br>
+    <main class="isi">
+        <div class="space"></div>
+        <div class="container">
+            <!--memanggil row yang berisi colom 6 samping kanan dan kiri-->
+            <div class="row">
+                <!--Isi kiri-->
+                <div class="col-sm-6">
+                    <div class="left-container">
+                        <div class="left-wrapper">
+                            <img src="	https://ecs7.tokopedia.net/img/content/register_new.png" alt="/" class="gambarTokped">
+                            <div class="text-center">Jual Beli Mudah Hanya di Tokopedia</div>
+                            <div class="desk-kiri">Gabung dan rasakan kemudahan bertransaksi di Tokopedia</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Isi kanan-->
+                <div class="col-sm-6">
+                    <div class="right-container">
+                        <div class="box">
+                            <h1 class="box-title">Daftar Sekarang</h1>
+                            <div class="desk-box">
+                                <span>Sudah punya akun Tokopedia?</span>
+                                &nbsp;
+                                <a href="login" class="text-login">Masuk</a>
+                            </div>
+                            <div>
+                                <div class="login-google">
+                                    <button type="button" class="btn-default">
+                                        <img src="https://assets.tokopedia.net/assets-tokopedia-lite/v2/zeus/kratos/50524134.svg" alt="/" class="logo-google">
+                                        <span>Google</span>
+                                    </button>
+                                </div>
+                                <div class="opsi">
+                                    atau daftar dengan
+                                </div>
+                                <form novalidate>
+                                    <div class="space-input">
+                                        <div for="regis" class="regis">
+                                            Phone Number or Email
+                                        </div>
+                                        <div class="input-regis">
+                                            <div class="register">
+                                                <input type="text" autocomplete="off" class="button-regis">
+                                            </div>
+                                        </div>
+                                        <div class="example">
+                                            <p class="email">
+                                                Example: email@tokopedia.com
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-daftar">
+                                        <span>Daftar</span>
+                                    </button>
+                                </form>
+                            </div>
+
+                            <div class="keterangan">
+                                <div>Dengan mendaftar, saya menyetujui</div>
+                                <a href="#">Syarat dan Ketentuan</a>
+                                <span>
+                                    serta
+                                </span>
+                                <a href="#">Kebijakan Privasi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--class footer-->
+    <footer class="footer-tokped">
+        <div class="space-footer">
+            <span>
+                © 2009-2023, PT Tokopedia
+            </span>
+            <span class="footer-link">
+                <a href="#">
+                    Tokopedia Care
+                </a>
+            </span>
+        </div>
+    </footer>
+</body>
+</html>
