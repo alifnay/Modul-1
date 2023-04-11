@@ -11,13 +11,18 @@
 
     <?php
 
-    // Deklarasi dan inisialisasi
     $bil = 3;
-
-    // Dumping informasi mengenai variabel
     var_dump($bil);
-    print_r($bil);
+    // Output: int(3)
 
+    $var = "";
+    var_dump($var);
+    // Output: string(0) ""
+
+    $var = null;
+    var_dump($var);
+    // Output: NULL
+    
     ?>
 
 </body>
