@@ -13,7 +13,10 @@
 
     // Deklarasi dan inisialisasi
     $bil = 3;
-    echo $bil;
+
+    // Dumping informasi mengenai variabel
+    var_dump($bil);
+    print_r($bil);
 
     ?>
 
