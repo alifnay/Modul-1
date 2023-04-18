@@ -7,6 +7,7 @@
     <title>Document</title>
 
     <style>
+        /*CSS*/
         html {
             height: 100%;
         }
@@ -204,28 +205,29 @@
     </style>
 
     <script>
+        //Javascript
         function validateForm() {
             var id = document.forms["loginForm"]["id"].value;
             var password = document.forms["loginForm"]["password"].value;
 
-            if (id == "" || password == "") {
-                alert("Username dan Password harus diisi");
+            if (id == "" || password == "") { //jika id dan password kosong
+                alert("Username dan Password harus diisi"); //muncul peringatan 
 
-                if(id == ""){
-                    document.forms["loginForm"]["id"].focus();
-                } else {
-                    document.forms["loginForm"]["password"].focus();
+                if(id == ""){ //jika usernmae/id kosong
+                    document.forms["loginForm"]["id"].focus(); //akan mengembalikan focus ke form id
+                } else { //jika password kosong
+                    document.forms["loginForm"]["password"].focus(); //akan mengembalikan focus ke form password
                 } 
                 return false;
             }
 
-            var letters = /^[A-Za-z]/;
-            if (!id.match(letters) || !password.match(letters)) {
-                alert("Username dan Password hanya bisa diisi dengan huruf");
-                if (!id.match(letters)) {
-					document.forms["loginForm"]["id"].focus();
+            var letters = /^[A-Za-z]/; 
+            if (!id.match(letters) || !password.match(letters)) { //jika username dan password tidak memenuhi var letters
+                alert("Username dan Password hanya bisa diisi dengan huruf"); //memunculkan peringatan 
+                if (!id.match(letters)) { //jika username tidak memenuhi var letters
+					document.forms["loginForm"]["id"].focus(); //mengembalikan focus ke form username
 				} else {
-					document.forms["loginForm"]["password"].focus();
+					document.forms["loginForm"]["password"].focus(); //mengembalikan focus ke form password
 				}
 				return false;
             }
@@ -239,45 +241,47 @@
         <h2>Login</h2>
 
         <form name="loginForm" action="<?php $_SERVER['PHP_SELF']?>" method="post" onsubmit="return validateForm()">
+            <!--class username-->
             <div class="user-box">
                 <input type="text" name="id" id="id">
                 <label for="id">Username</label>
             </div>
-
+            <!--class password-->
             <div class="user-box">
                 <input type="password" name="password" id="password">
                 <label for="password">Password</label>
             </div>
 
+            <!--tambaha-->
             <p style="color:#fff; font-size: 16px;">Belum punya akun?
                 <button class="klik-button">klik disini</button>
             </p>
+
             <a href="#">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                <input class="submit-button" type="submit" value="Login">
+                <!--login button-->
+                <input class="submit-button" type="submit" value="Login" name="submit">
             </a>
         </form>  
     </div>
 
+    <!--PHP-->
     <?php
-    $valid_id = "Alif";
-    $valid_password = "Nay";
-    
-    $id = $_POST["id"];
-    $password = $_POST["password"];
-    
-    if (!is_string($id) || !is_string($password)) {
-        echo "ID/Username dan Password harus berupa string";
-        exit();
-    }
-    
-    if ($id === $valid_id && $password === $valid_password) {
-        echo "Selamat datang, " . $id;
-    } else {
-        echo "Login gagal";
+    if (isset($_POST['submit'])) {
+        $valid_id = "Alif"; //validasi id dengan nama username Alif
+        $valid_password = "Alif"; //validasi password dengan password Alif
+        
+        $id = isset($_POST["id"]) ? $_POST["id"] : "" ; //membuat variabel id
+        $password = isset($_POST["password"]) ? $_POST["password"] : "" ; //membuat variabel password
+        
+        if ($id === $valid_id && $password === $valid_password) { //jika username dan password valid
+            echo "<center><p>Selamat datang, $id</p></center>"; //mengeluarkan pesan
+        } else { //jika username dan password tidak valid
+            echo "<center><p>Login gagal</p></center>"; //mengeluarkan pesan
+        }
     }
     ?>
     
