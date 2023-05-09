@@ -75,20 +75,18 @@
     <!--Studi Kasus Modul 10-->
     <!--PHP-->
     <?php
+        //menggunakan session
         session_start();
         if (isset($_POST['login'])) {
-            $user = $_POST['id'];
-            $pass = $_POST['password'];
+            $user = $_POST['id']; //mengambil nilai id
+            $pass = $_POST['password']; //mengambil nilai password
             //memeriksa login
-            if ($user == "Alif" && $pass == "naynay") {
+            if ($user == "Alif" && $pass == "naynay") { //username dan password harus benar untuk login (dan harus huruf)
                 //membuat session
                 $_SESSION['login'] = $user;
-                header("location: StudiKasus_2.php");
-                //menuju ke halaman pemeriksaan session
-                echo "<h1>Halo, kamu berhasil login! </h1>";
-                echo "<h2>Klik <a href='StudiKasus_2.php'> disini </a> untuk menuju ke halaman pemeriksaan session</h2>";
+                header("location: StudiKasus_2.php"); //mengarahkan ke page StudiKasus_2.php, menuju ke halaman pemeriksaan session
             } else {
-                echo "Login gagal, silahkan coba login kembali!";
+                echo "Login gagal, silahkan coba login kembali!"; //jika login gagal, maka akan mengeluarkan peringatan
             }
         }
     ?>
