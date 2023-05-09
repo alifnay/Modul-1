@@ -10,32 +10,32 @@
 
     <script>
         //Javascript
-        // function validateForm() {
-        //     var id = document.forms["loginForm"]["id"].value;
-        //     var password = document.forms["loginForm"]["password"].value;
+        function validateForm() {
+            var id = document.forms["loginForm"]["id"].value;
+            var password = document.forms["loginForm"]["password"].value;
 
-        //     if (id == "" || password == "") { //jika id dan password kosong
-        //         alert("Username dan Password harus diisi"); //muncul peringatan 
+            if (id == "" || password == "") { //jika id dan password kosong
+                alert("Username dan Password harus diisi"); //muncul peringatan 
 
-        //         if(id == ""){ //jika usernmae/id kosong
-        //             document.forms["loginForm"]["id"].focus(); //akan mengembalikan focus ke form id
-        //         } else { //jika password kosong
-        //             document.forms["loginForm"]["password"].focus(); //akan mengembalikan focus ke form password
-        //         } 
-        //         return false;
-        //     }
+                if(id == ""){ //jika usernmae/id kosong
+                    document.forms["loginForm"]["id"].focus(); //akan mengembalikan focus ke form id
+                } else { //jika password kosong
+                    document.forms["loginForm"]["password"].focus(); //akan mengembalikan focus ke form password
+                } 
+                return false;
+            }
 
-        //     var letters = /^[A-Za-z]/; 
-        //     if (!id.match(letters) || !password.match(letters)) { //jika username dan password tidak memenuhi var letters
-        //         alert("Username dan Password hanya bisa diisi dengan huruf"); //memunculkan peringatan 
-        //         if (!id.match(letters)) { //jika username tidak memenuhi var letters
-		// 			document.forms["loginForm"]["id"].focus(); //mengembalikan focus ke form username
-		// 		} else {
-		// 			document.forms["loginForm"]["password"].focus(); //mengembalikan focus ke form password
-		// 		}
-		// 		return false;
-        //     }
-        // }
+            var letters = /^[A-Za-z]/; 
+            if (!id.match(letters) || !password.match(letters)) { //jika username dan password tidak memenuhi var letters
+                alert("Username dan Password hanya bisa diisi dengan huruf"); //memunculkan peringatan 
+                if (!id.match(letters)) { //jika username tidak memenuhi var letters
+					document.forms["loginForm"]["id"].focus(); //mengembalikan focus ke form username
+				} else {
+					document.forms["loginForm"]["password"].focus(); //mengembalikan focus ke form password
+				}
+				return false;
+            }
+        }
     </script>
 </head>
 
