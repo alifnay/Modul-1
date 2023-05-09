@@ -10,7 +10,9 @@
             //menuju ke halaman pemeriksaan session
             echo "<h1>Halo, kamu berhasil login! </h1>";
             echo "<h2>Klik <a href='latihan2_2.php'> disini (latihan2_2.php)</a> untuk menuju ke halaman pemeriksaan session</h2>";
-        } 
+        } else {
+            die ("Anda belum login! Pastikan anda login terlebih dahulu <a href='latihan2_1.php'> disini</a>");
+        }
     } else {
         ?>
         <html>
@@ -28,4 +30,3 @@
         </html>
     <?php
     } ?>
-                
