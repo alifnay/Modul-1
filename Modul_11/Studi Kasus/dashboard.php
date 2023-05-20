@@ -63,6 +63,10 @@
         $(document).ready(function() {
             $('#data').DataTable();
         });
+
+        function confirmDelete() {
+            return confirm("Apakah anda yakin ingin menghapus data?");
+        }
     </script>
 </head>
 <body>
@@ -94,7 +98,7 @@
                     <td>
                         <a class="btn btn-outline-primary" href="lihat.php?nim=<?php echo $d['nim']; ?>">Lihat</a>
                         <a class="btn btn-outline-primary" href="edit.php?nim=<?php echo $d['nim']; ?>">Edit</a>
-                        <a class="btn btn-outline-primary" href="hapus.php?nim=<?php echo $d['nim']; ?>">Hapus</a>
+                        <a class="btn btn-outline-primary" href="hapus.php?nim=<?php echo $d['nim']; ?>" onclick="return confirmDelete()">Hapus</a>
                     </td>
                 </tr>
                 <?php
