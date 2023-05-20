@@ -33,6 +33,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
     <style>
         .title{
             text-align: center;
@@ -55,13 +56,21 @@
             margin-bottom: 50px;
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#data').DataTable();
+        });
+    </script>
 </head>
 <body>
     <br><br>
     <div class="container">
     <div class="box">
         <h5 class="title">Data Mahasiswa</h5>
-        <table class="table table-hover">
+        <table class="table table-hover" id="data">
             <thead>
             <tr>
                 <th>No</th>
@@ -92,6 +101,7 @@
             }
             ?>
         </table>
+        <br>
         <div class="d-flex justify-content-between">
             <form action="tambahdata.php" method="post">
                 <button type="submit" class="btn btn-primary" name="tambah">Tambah Data</button>
