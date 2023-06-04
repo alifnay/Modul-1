@@ -31,6 +31,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menambah Data Mahasiswa</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 
     <script>
         //Javascript
@@ -78,45 +79,76 @@
 </head>
 
 <body>
-    <div class="container">
-    <h3 class="title">Data Pengajar</h3>
-        <div class="box">
-            <h5 class="title-child">Menambahkan data pengajar</h5>
-            <form action="dataPengajar.php" method="post" name="addform" onsubmit="return validateForm()">
-                <div class="mb-3 mt-3">
-                    <label for="nip" class="form-label">NIP</label>
-                    <input type="text" class="form-control" id="nip" placeholder="Masukkan nip" name="nip">
-                </div>
-                <div class="mb-3">
-                    <label for="nama" class="form-label">Nama</label>
-                    <input type="text" class="form-control" id="nama" placeholder="Masukkan nama" name="nama">
-                </div>
-                <div class="mb-3">
-                    <label for="fakultas" class="form-label">Fakultas</label>
-                    <input type="text" class="form-control" id="fakultas" placeholder="Masukkan fakultas" name="fakultas">
-                </div>
-                <div class="mb-3">
-                    <label for="matkul" class="form-label">Mata Kuliah</label>
-                    <input type="text" class="form-control" id="matkul" placeholder="Masukkan matkul" name="matkul">
-                </div>
-                <div class="mb-3">
-                    <label for="profile" class="form-label">Profile</label>
-                    <textarea class="form-control" name="profile" value="<?php echo $d['profile'] ?>" rows="3"></textarea>
-                </div>
-                <div class="mb-3">
-                    <label for="lulusan" class="form-label">Lulusan</label>
-                    <input type="text" class="form-control" id="lulusan" placeholder="Masukkan lulusan" name="lulusan">
-                </div>
-                <div class="flex">
-                    <button type="submit" class="btn btn-primary" name="tambah_data">
-                        Submit
-                    </button>
-                    <a href="dataPengajar.php" class="btn btn-success">
-                        Batal
-                    </a>
-                </div>
-            </form>
+    <!--Header-->
+    <header class="header-dashAdmin">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid" style="padding-left: 20px; padding-right: 70px;">
+                <a class="navbar-brand" href="dashboard.php">
+                    <img src="https://i.pinimg.com/originals/ef/75/29/ef75292bd5a38ba2ee5363f9cb7a94e4.png" alt="" style="width: 7%">
+                    <span style="color: white; cursor: pointer;">UNIVERSITAS NEGERI YOGYAKARTA</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="image-animated">
+        <div class="container d-flex flex-column">
+            <h3 class="title">Data Pengajar</h3>
+            <div class="box" style="margin-top: 20px; margin-bottom: 20px;">
+                <h5 class="title-child">Menambahkan data pengajar</h5>
+                <form action="dataPengajar.php" method="post" name="addform" onsubmit="return validateForm()">
+                    <div class="mb-3 mt-3">
+                        <label for="nip" class="form-label">NIP</label>
+                        <input type="text" class="form-control" id="nip" placeholder="Masukkan nip" name="nip">
+                    </div>
+                    <div class="mb-3">
+                        <label for="nama" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="nama" placeholder="Masukkan nama" name="nama">
+                    </div>
+                    <div class="mb-3">
+                        <label for="fakultas" class="form-label">Fakultas</label>
+                        <input type="text" class="form-control" id="fakultas" placeholder="Masukkan fakultas" name="fakultas">
+                    </div>
+                    <div class="mb-3">
+                        <label for="matkul" class="form-label">Mata Kuliah</label>
+                        <input type="text" class="form-control" id="matkul" placeholder="Masukkan matkul" name="matkul">
+                    </div>
+                    <div class="mb-3">
+                        <label for="profile" class="form-label">Profile</label>
+                        <textarea class="form-control" name="profile" value="<?php echo $d['profile'] ?>" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="lulusan" class="form-label">Lulusan</label>
+                        <input type="text" class="form-control" id="lulusan" placeholder="Masukkan lulusan" name="lulusan">
+                    </div>
+                    <div class="flex">
+                        <button type="submit" class="btn btn-primary" name="tambah_data">
+                            Submit
+                        </button>
+                        <a href="dataPengajar.php" class="btn btn-success">
+                            Batal
+                        </a>
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <footer id="footer" class="footer">
+        <div class="footer-content bg-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer-info">
+                            <h3>BEST UNIVERSITY</h3>
+                            <p>Jl. Colombo Yogyakarta No.1, 
+                                <br>Kabupaten Sleman, 
+                                <br>Daerah Istimewa Yogyakarta</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
