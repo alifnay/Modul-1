@@ -49,6 +49,7 @@ if (isset($_POST['log-out'])) {
         </nav>
     </header>
     
+    <!--Content-->
     <section class="image-animated" class="d-flex align-items-center">
         <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative aos-init aos-animate">
             <div class="welcome">
@@ -62,6 +63,7 @@ if (isset($_POST['log-out'])) {
         </div>
     </section>
 
+    <!--Footer-->
     <footer id="footer" class="footer">
         <div class="footer-content bg-dark">
             <div class="container">
