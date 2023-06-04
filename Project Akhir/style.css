@@ -1,0 +1,191 @@
+body{
+    background-color: #f0f3f7;
+}
+.box{
+    background-color: white;
+    border: 1px solid #f0f3f7;
+    border-radius: 10px !important;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+    padding: 24px 40px 32px;
+    width: 100%;
+}
+.box .box-in{
+    background-color: white;
+    border: 1px solid #f0f3f7;
+    border-radius: 3px !important;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    padding: 24px 40px 32px;
+    width: 100%;
+}
+.header-login{
+    display: block;
+    margin-top: 17px;
+}
+.header-login span{
+    color: #061578;
+    font-weight: bold;
+    font-size: 17px;
+    font-family: "Gama Serif", Georgia, "Times New Roman", Times, serif;
+}
+input{
+    cursor: pointer;
+}
+.pass{
+    position: relative;
+    display: flex;
+}
+.form-control{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    padding: 10px 20px;
+    font-size: 18px;
+    box-sizing: border-box;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+i{
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+}
+input:is(:focus, :valid) ~ i {
+    color: #4070f4;
+}
+.register{
+    margin-top: 30px;
+}
+a{
+    text-decoration: none;
+}
+.login-btn{
+    margin-top: 50px;
+}
+.login-btn-admin{
+    margin-top: 104px;
+}
+.loginBody{
+    background-image: url(https://img.freepik.com/free-vector/simple-white-abstract-gradient-background_53876-99910.jpg?w=2000);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+.col .navbar nav a{
+    color: black;
+}
+.logoRegis img{
+    margin-top: 40px;
+    display: block;
+    width: 10%;
+    border-style: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+.box-regis{
+    width: 450px;
+    padding: 40px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 37px rgba(8,21,66,0.05);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    background-color: #fff;
+    margin-top: 20px;
+}
+.title-signin{
+    font-size: xx-large;
+    font-weight: 600;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+.title-signup{
+    font-size: xx-large;
+    font-weight: 600;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+.p-sign{
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+.regis-btn{
+    margin-top: 30px;
+}
+.nav-item{
+    margin-left: 10px;
+}
+.signin-btn button{
+    margin-top: 100px;
+}
+.tosignup{
+    margin-top: 20px;
+}
+.tosignin{
+    margin-top: 20px;
+}
+.error{
+    margin-top: 20px;
+    color: red;
+}
+.welcome h2{
+    margin: 0 0 10px 0;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--color-secondary);
+    font-family: var(--font-secondary);
+}
+.image-animated{
+    width: 100%;
+    min-height: 50vh;
+    background: url(https://img.freepik.com/free-vector/simple-white-abstract-gradient-background_53876-99910.jpg?w=2000) center center;
+    background-size: cover;
+    position: relative;
+    padding: 10px 0 60px;
+}
+.image-animated .animated{
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+@keyframes up-down {
+    0% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+footer{
+    display: block;
+    color: white;
+}
+.footer .footer-content{
+    padding: 60px 0 30px 0;
+}
+.footer .footer-content .footer-info{
+    font-size: 28px;
+    padding: 2px 0 2px 0;
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: sans-serif;
+}
+.footer .footer-content .footer-info p{
+    font-size: 10px;
+    font-weight: lighter;
+    font-family: sans-serif;
+    line-height: 30px;
+    margin-bottom: 0;
+    color: white;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.box .user-image .animated{
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
