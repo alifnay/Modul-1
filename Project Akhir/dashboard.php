@@ -1,6 +1,12 @@
 <?php
 include("koneksi.php");
 
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: SignIn.php");
+    exit;
+}
+
 if (isset($_POST['log-out'])) {
     session_destroy();
     header("location: SignIn.php");
@@ -17,6 +23,11 @@ if (isset($_POST['log-out'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <script>
+        function confirmLogout() {
+            return confirm("Apakah anda ingin logout?");
+        }
+    </script>
 </head>
 
 <body>
@@ -39,7 +50,7 @@ if (isset($_POST['log-out'])) {
                             </li>
                             <form action="" method="post">
                             <li class="nav-item">
-                                <button class="btn btn-danger" type="submit" name="log-out">Logout</button>
+                                <button class="btn btn-danger" type="submit" name="log-out" onclick="return confirmLogout()">Logout</button>
                             </li>
                             </form>
                         </ul>

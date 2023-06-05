@@ -1,6 +1,12 @@
 <?php
     include ("koneksi.php");
 
+    session_start();
+    if (!isset($_SESSION['username'])) {
+        header("Location: SignIn.php");
+        exit;
+    }
+
     if (isset($_POST['tambah_data'])) {
         $nip = $_POST['nip'];
         $nama = $_POST['nama'];
@@ -51,6 +57,10 @@
         function confirmDelete() {
             return confirm("Apakah anda yakin ingin menghapus data?");
         }
+
+        function confirmLogout() {
+            return confirm("Apakah anda ingin logout?");
+        }
     </script>
 </head>
 
@@ -74,7 +84,7 @@
                             </li>
                             <form action="" method="post">
                             <li class="nav-item">
-                                <button class="btn btn-danger" type="submit" name="log-out">Logout</button> 
+                            <button class="btn btn-danger" type="submit" name="log-out" onclick="return confirmLogout()">Logout</button>
                             </li>
                             </form>
                         </ul>

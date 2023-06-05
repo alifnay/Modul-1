@@ -1,6 +1,12 @@
 <?php
     include ("koneksi.php");
 
+    session_start();
+    if (!isset($_SESSION['username'])) {
+        header("Location: SignIn.php");
+        exit;
+    }
+
     if (isset($_POST['tambah_data'])) {
         $nip = $_POST['nip'];
         $nama = $_POST['nama'];

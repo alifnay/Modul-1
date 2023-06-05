@@ -2,6 +2,12 @@
     include("koneksi.php");
     $message = null;
 
+    session_start();
+    if (isset($_SESSION['username'])) {
+        header("Location: dashboard.php");
+        exit;
+    }
+
     if (isset($_POST['signup'])) {
         $username = $_POST['username'];
         $email = $_POST['email'];
@@ -48,6 +54,14 @@
             <span>UNIVERSITAS NEGERI YOGYAKARTA</span>
         </div>
     </header><br>
+
+    <script>
+        function validateRegis() {
+            return confirm("Apakah anda yakin ingin menambah akun?");
+        }
+        
+    </script>
+
     <!--Content-->
         <div class="box">
             <div class="row">
@@ -58,7 +72,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <form action="<?php $_SERVER['PHP_SELF']?>" method="post">
+                    <form action="<?php $_SERVER['PHP_SELF']?>" name="signUpForm" method="post" onsubmit="return validateRegis()">
                         <div class="title-signup">Registrasi Akun</div>
                         <p class="p-regis">Masukkan nama user dan email untuk membuat akun baru!</p>
                         <div class="form-floating mb-3">
@@ -99,11 +113,6 @@
                                 <button type="submit" class="btn btn-primary btn-block" name="signup" value="SignUp">Sign Up</button>
                             </div>
                         </div>
-                        <?php
-                            if($message) : 
-                        ?>
-                        <div class="error"><?php echo $message->text ?></div>
-                        <?php endif; ?>
                     </form>
                 </div>
             </div>

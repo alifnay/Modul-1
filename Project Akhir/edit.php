@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['username'])) {
+        header("Location: SignIn.php");
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +30,11 @@
             width: 100%;
         }
     </style>
+    <script>
+        function confirmLogout() {
+            return confirm("Apakah anda ingin logout?");
+        }
+    </script>
 </head>
 
 <body>
@@ -44,7 +57,7 @@
                             </li>
                             <form action="" method="post">
                             <li class="nav-item">
-                                <button class="btn btn-danger" type="submit" name="log-out">Logout</button>
+                                <button class="btn btn-danger" type="submit" name="log-out" onclick="return confirmLogout()">Logout</button>
                             </li>
                             </form>
                         </ul>

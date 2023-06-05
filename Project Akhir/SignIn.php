@@ -2,6 +2,12 @@
 include("koneksi.php");
 $message = null;
 
+session_start();
+if (isset($_SESSION['username'])) {
+    header("Location: dashboard.php");
+    exit;
+}
+
 if (isset($_POST['login'])) {
     $username = $_POST['id'];
     $password = $_POST['password'];
@@ -34,6 +40,7 @@ if (isset($_POST['login'])) {
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="loginBody">
@@ -55,33 +62,36 @@ if (isset($_POST['login'])) {
                     style="width: 85%;" class="img-fluid animated">
                     </div>
                 </div>
+
+                <script>
+                    function validateLogForm() {
+                        const usernameForm = document.querySelector('input[name="id"]').value;
+                        const passwordForm = document.querySelector('input[name="password"]').value;
+
+                        if (!usernameForm || !passwordForm) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Gagal Login',
+                                text: 'Semua data harus diisi!',
+                            })
+                            document.forms["loginForm"]["id"].focus()
+                            return false;
+                        }
+                    }
+                </script>
+
                 <div class="col">
-                    <form action="<?php $_SERVER['PHP_SELF']?>" name="loginForm" method="post">
+                    <form action="<?php $_SERVER['PHP_SELF']?>" name="loginForm" method="post" onsubmit="return validateLogForm()">
                         <div class="title-signin">Log In</div>
                         <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="id" placeholder="Username" name="id" required>
+                            <input type="text" class="form-control" id="id" placeholder="Username" name="id">
                             <label for="id">Username</label>
                         </div>
                         <div class="form-floating">
-                            <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+                            <input type="password" class="form-control" id="password" placeholder="Password" name="password">
                             <label for="password">Password</label>
                             <i class="uil uil-eye-slash toggle" onclick="myFunction()"></i>
                         </div>
-
-                        <script>
-                            const toggle = document.querySelector(".toggle");
-                            function myFunction() {
-                                var x = document.getElementById("password");
-                                if (x.type === "password") {
-                                    x.type = "text";
-                                        toggle.classList.replace("uil-eye-slash", "uil-eye");
-                                    } else {
-                                        x.type = "password";
-                                        toggle.classList.replace("uil-eye", "uil-eye-slash");
-                                    }
-                                }
-                        </script>
-
                         <div class="tosignup">
                             Belum punya akun? Klik 
                             <a href="SignUp.php"> disini</a>
